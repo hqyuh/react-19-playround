@@ -36,16 +36,24 @@ const MessageForm = ({ addOptimisticMessage, sendMessage }) => {
 const Thread = ({ messages, sendMessage }) => {
   // The useOptimistic hook is used to add an optimistic message to the list of messages
   const [optimisticMessages, addOptimisticMessage] = useOptimistic(
-    messages,
-    (state, newMessage) => [
-      ...state,
-      {
-        text: newMessage,
-        sending: true,
-      },
-    ]
+    messages, // initial state
+    (state, newMessage) => {
+      // state is a list of existing messages
+      console.log('state', state);
+      // newMessage is the new message that the user just sent
+      console.log('newMessage', newMessage);
+      return [
+        ...state,
+        {
+          text: newMessage,
+          sending: true,
+          from: 'user'
+        },
+      ]
+    }
   );
 
+  console.log('🐔 =>  optimisticMessages:', optimisticMessages);
   return (
     <div>
       <MessageForm
@@ -67,6 +75,8 @@ const Thread = ({ messages, sendMessage }) => {
 const deliverMessage = async (message) => {
   // Simulate a delay
   await new Promise((res) => setTimeout(res, 1000));
+
+  console.log('🚀 Call API at here');
   return message;
 };
 

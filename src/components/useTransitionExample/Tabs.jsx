@@ -9,17 +9,20 @@ export function Tabs() {
   const [isPending, startTransition] = useTransition();
   const [tab, setTab] = useState('tab1');
 
-  function selectTab(nextTab) {
+  function selectTab(currTab) {
     startTransition(() => {
-      setTab(nextTab);
+      setTab(currTab);
     });
+
+    // setTab(currTab);
   }
 
   return (
     <div className='px-4'>
+      <div className='text-xl p-4'>{isPending ? 'true' : 'false'}</div>
       <div className='flex space-x-4 mb-4'>
         <TabButton isActive={tab === 'tab1'} onClick={() => selectTab('tab1')}>
-          Tab One
+          Tab 1
         </TabButton>
         <TabButton isActive={tab === 'tab2'} onClick={() => selectTab('tab2')}>
           Tab 2 (slow)

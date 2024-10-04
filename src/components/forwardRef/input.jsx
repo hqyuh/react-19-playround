@@ -9,7 +9,6 @@ function Input({ ref }) {
         ref.current.value = inputValue
     }, [inputValue, ref]);
 
-
     // useImperativeHandle(ref, () => ({
     //   focus: () => {
     //     inputRef.current.focus();

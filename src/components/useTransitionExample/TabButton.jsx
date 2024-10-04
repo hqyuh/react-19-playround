@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const TabButton = ({ children, isActive, onClick }) => {
   if (isActive) {
     return <div className='text-blue-600 font-bold'>{children}</div>;

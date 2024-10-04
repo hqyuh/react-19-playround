@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { use, useState, Suspense } from 'react';
 
 // Simulate fetching a message

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useFormState } from 'react-dom';
 
 const addToCart = (prevState, queryData) => {

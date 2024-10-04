@@ -17,6 +17,8 @@ import { UseOptimisticExample } from "./components/useOptimisticExample/Message"
 import { UseTransitionExample } from "./components/useTransitionExample/Tabs";
 import MainLayout from "./layouts/MainLayout";
 import InputContainer from "./components/forwardRef";
+import { UpdateNameActionState } from "./components/useActionState";
+import InputWithCleanup from "./components/InputWithCleanupRef";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -57,10 +59,10 @@ const App = () => {
           element={<UseTransitionExample />}
         />
 
-        <Route
-          path="forwardref-example"
-          element={<InputContainer />}
-        />
+        <Route path="forwardref-example" element={<InputContainer />} />
+
+        <Route path="useactionstate-example" element={<UpdateNameActionState />} />
+        <Route path="inputwithcleanupref-example" element={<InputWithCleanup />} />
       </Route>
     )
   );

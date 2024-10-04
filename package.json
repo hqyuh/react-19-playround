@@ -10,13 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.0.0-beta-26f2496093-20240514",
-    "react-dom": "^19.0.0-beta-26f2496093-20240514",
+    "react": "19.0.0-rc-0751fac7-20241002",
+    "react-dom": "19.0.0-rc-0751fac7-20241002",
     "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.56",
-    "@types/react-dom": "^18.2.19",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
     "eslint": "^8.56.0",

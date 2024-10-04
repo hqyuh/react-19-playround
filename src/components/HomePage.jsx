@@ -151,6 +151,32 @@ const HomePage = () => {
               </a>
             </div>
           </li>
+          <li className='bg-blue-50 p-4 rounded shadow my-5'>
+            <div>
+              <h3 className='text-2xl font-bold'>UseActionState Example</h3>
+              <p className='my-2'>
+              </p>
+              <a
+                className='font-bold text-blue-800'
+                href='/useactionstate-example'
+              >
+                View
+              </a>
+            </div>
+          </li>
+          <li className='bg-blue-50 p-4 rounded shadow my-5'>
+            <div>
+              <h3 className='text-2xl font-bold'>Input With Clean up Ref Example</h3>
+              <p className='my-2'>
+              </p>
+              <a
+                className='font-bold text-blue-800'
+                href='/inputwithcleanupref-example'
+              >
+                View
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
     </>

@@ -1,4 +1,5 @@
-import React, { createContext, useState, use } from 'react';
+/* eslint-disable react/prop-types */
+import { createContext, useState, use } from 'react';
 
 // Create a context object
 const ThemeContext = createContext();
@@ -39,11 +40,7 @@ const ThemedCard = () => {
         Themed Card
       </h1>
       <p className={theme === 'light' ? 'text-gray-800' : 'text-white'}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non neque
-        libero. Nullam mattis metus a sapien tempor, sit amet mollis est
-        facilisis. Phasellus nec turpis nec dui venenatis vestibulum. Sed
-        dapibus dapibus justo, at rhoncus risus malesuada vel. Proin eget leo id
-        mi ullamcorper rhoncus.
+        Lorem 
       </p>
       {/* Toggle button */}
       <button
