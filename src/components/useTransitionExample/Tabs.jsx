@@ -15,6 +15,10 @@ export function Tabs() {
     });
 
     // setTab(currTab);
+
+    // can use async/await with startTransition in React 19.
+    // startTransition(async () => {
+    // });
   }
 
   return (

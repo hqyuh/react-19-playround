@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 
 async function updateName(name) {
   console.log("updateName", name);
@@ -12,15 +14,39 @@ async function updateName(name) {
   return null;
 }
 
+const Button = () => {
+  const { pending, data, method, action } = useFormStatus();
+
+  return (
+    <button
+        type="submit"
+        disabled={pending}
+        className={`w-full px-4 py-2 text-lg font-semibold text-white rounded-lg shadow-md 
+                ${
+                  pending
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-500 hover:bg-blue-700"
+                }
+                transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none`}
+      >
+        {pending ? "Updating..." : "Update"}
+      </button>
+  )
+}
+
 export const UpdateNameActionState = () => {
   const [error, submitAction, isPending] = useActionState(
     async (_prevState, formData) => {
+      console.log('🐔 =>  _prevState:', _prevState);
+      console.log('🐔 =>  formData:', formData);
       const error = await updateName(formData.get("name"));
+      console.log('🐔 =>  error:', error);
 
       if (error) {
         return error;
       }
-    }
+    },
+    null
   );
   console.log("Pending:", isPending);
 
@@ -57,6 +83,8 @@ export const UpdateNameActionState = () => {
       >
         {isPending ? "Updating..." : "Update"}
       </button>
+
+      {/* <Button /> */}
       {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
     </form>
   );

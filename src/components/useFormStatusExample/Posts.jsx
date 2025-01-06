@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useFormStatus } from 'react-dom';
 import { useState } from 'react';
@@ -14,8 +15,9 @@ const PostItem = ({ post }) => {
 
 // SubmitButton component
 const SubmitButton = () => {
-  const { pending } = useFormStatus();
+  const { pending, data, method, action } = useFormStatus();
   console.log(pending);
+  console.log(data);
 
   return (
     <button
