@@ -140,6 +140,21 @@ const HomePage = () => {
           </li>
           <li className='bg-blue-50 p-4 rounded shadow my-5'>
             <div>
+              <h3 className='text-2xl font-bold'>useTransition Example 2</h3>
+              <p className='my-2'>
+                Use the useTransition hook to show a message before the server
+                responds
+              </p>
+              <a
+                className='font-bold text-blue-800'
+                href='/usetransition-example2'
+              >
+                View
+              </a>
+            </div>
+          </li>
+          <li className='bg-blue-50 p-4 rounded shadow my-5'>
+            <div>
               <h3 className='text-2xl font-bold'>forwardRef Example</h3>
               <p className='my-2'>
               </p>
@@ -172,6 +187,19 @@ const HomePage = () => {
               <a
                 className='font-bold text-blue-800'
                 href='/inputwithcleanupref-example'
+              >
+                View
+              </a>
+            </div>
+          </li>
+          <li className='bg-blue-50 p-4 rounded shadow my-5'>
+            <div>
+              <h3 className='text-2xl font-bold'>UseDeferredValue Example</h3>
+              <p className='my-2'>
+              </p>
+              <a
+                className='font-bold text-blue-800'
+                href='/usedeferredvalue-example'
               >
                 View
               </a>

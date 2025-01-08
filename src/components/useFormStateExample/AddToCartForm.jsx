@@ -1,5 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
+/**
+ * 
+ * In previous Canary releases, the React.useActionState hook was called ReactDOM.useFormState, 
+ * but has been renamed to useActionState and useFormState removed. 
+ * import { useFormState } from 'react-dom';
+ * */
 
 const addToCart = (prevState, queryData) => {
   const itemID = queryData.get('itemID');
@@ -11,7 +17,8 @@ const addToCart = (prevState, queryData) => {
 };
 
 const AddToCartForm = ({ itemID, itemTitle }) => {
-  const [message, formAction] = useFormState(addToCart, null);
+  // useFormState has been removed // const [message, formAction] = useFormState(addToCart, null);
+  const [message, formAction] = useActionState(addToCart, null);
 
   return (
     <form

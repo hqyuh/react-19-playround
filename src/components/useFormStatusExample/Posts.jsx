@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useFormStatus } from 'react-dom';
 import { useState } from 'react';
+import { useId } from 'react';
 
 // PostItem component
 const PostItem = ({ post }) => {
@@ -32,6 +33,7 @@ const SubmitButton = () => {
 
 // PostForm component
 const PostForm = ({ addPost }) => {
+  const id = useId();
   const formAction = async (formData) => {
     // Simulate a delay of 2 seconds
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -52,31 +54,31 @@ const PostForm = ({ addPost }) => {
       <div className='mb-4'>
         <label
           className='block text-gray-700 text-sm font-bold mb-2'
-          htmlFor='title'
+          htmlFor={`${id}-title`}
         >
           Title
         </label>
         <input
           className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-          id='title'
+          id={`${id}-title`}
           type='text'
           placeholder='Enter title'
-          name='title'
+          name={`${id}-title`}
         />
       </div>
       <div className='mb-6'>
         <label
           className='block text-gray-700 text-sm font-bold mb-2'
-          htmlFor='body'
+          htmlFor={`${id}-body`}
         >
           Body
         </label>
         <textarea
           className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-          id='body'
+          id={`${id}-body`}
           rows='5'
           placeholder='Enter body'
-          name='body'
+          name={`${id}-body`}
         ></textarea>
       </div>
       <div className='flex items-center justify-between'>

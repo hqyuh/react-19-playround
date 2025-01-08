@@ -15,10 +15,12 @@ import { UseFormStatusExample } from "./components/useFormStatusExample/Posts";
 import AddToCartForm from "./components/useFormStateExample/AddToCartForm";
 import { UseOptimisticExample } from "./components/useOptimisticExample/Message";
 import { UseTransitionExample } from "./components/useTransitionExample/Tabs";
+import { UseTransitionExample2 } from "./components/useTransitionExample2";
 import MainLayout from "./layouts/MainLayout";
 import InputContainer from "./components/forwardRef";
 import { UpdateNameActionState } from "./components/useActionState";
 import InputWithCleanup from "./components/InputWithCleanupRef";
+import { UseDeferredValue } from "./components/useDeferredValue";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -59,10 +61,16 @@ const App = () => {
           element={<UseTransitionExample />}
         />
 
+        <Route
+          path="usetransition-example2"
+          element={<UseTransitionExample2 />}
+        />
+
         <Route path="forwardref-example" element={<InputContainer />} />
 
         <Route path="useactionstate-example" element={<UpdateNameActionState />} />
         <Route path="inputwithcleanupref-example" element={<InputWithCleanup />} />
+        <Route path="usedeferredvalue-example" element={<UseDeferredValue />} />
       </Route>
     )
   );
